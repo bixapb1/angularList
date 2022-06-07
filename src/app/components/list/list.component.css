@@ -1,0 +1,25 @@
+strong {padding-right: 10px;}
+.viewport {
+    height: 50%;
+    width: 100%;
+  }
+  
+  .viewport-item {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border: 1px solid gray;
+  }
+  .active {
+    background-color: #dadada;
+  }
+
+  .button-container {
+    padding: 5px 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .list {
+    margin: 0 auto;
+    padding: 0 100px;
+  }

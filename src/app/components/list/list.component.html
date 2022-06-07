@@ -1,0 +1,59 @@
+<cdk-virtual-scroll-viewport
+  itemSize="lists.length"
+  class="viewport"
+  *ngIf="lists.length; else elseBlock"
+>
+  <div
+    *cdkVirtualFor="let list of lists"
+    class="viewport-item"
+    (click)="handleList(list)"
+    [ngClass]="{ active: list.ProductId === isSelect }"
+  >
+    {{ list.ProductDescription || "it's unknown" }}
+    >
+  </div>
+</cdk-virtual-scroll-viewport>
+<ng-template #elseBlock><h3>list is empty</h3></ng-template>
+
+<mat-list role="list" *ngIf="list" class="list">
+  <div class="button-container">
+    <button mat-mini-fab (click)="list = undefined">Close</button>
+  </div>
+  <mat-list-item role="listitem">
+    <strong>ProductId:</strong>
+    {{ list.ProductId || "it's unknown" }}</mat-list-item
+  >
+  <mat-list-item role="listitem">
+    <strong>ColorIdx:</strong>
+    {{ list.ColorIdx || "it's unknown" }}</mat-list-item
+  >
+  <mat-list-item role="listitem">
+    <strong>ProductCode:</strong>
+    {{ list.ProductCode || "it's unknown" }}</mat-list-item
+  >
+  <mat-list-item role="listitem">
+    <strong>ProductDescription:</strong>
+    {{ list.ProductDescription || "it's unknown" }}</mat-list-item
+  >
+  <mat-list-item role="listitem">
+    <strong>Price:</strong> {{ list.Price || "it's unknown" }}</mat-list-item
+  >
+  <mat-list-item role="listitem">
+    <strong>VoDatum:</strong>{{ list.VoDatum || "it's unknown" }}</mat-list-item
+  >
+  <mat-list-item role="listitem"
+    ><strong>IsHeavy:</strong>
+    {{ list.IsHeavy || "it's unknown" }}</mat-list-item
+  >
+  <mat-list-item role="listitem">
+    <strong>RestrictedLands:</strong>
+    {{ list.RestrictedLands || "it's unknown" }}</mat-list-item
+  >
+  <mat-list-item role="listitem">
+    <strong>IsFsk:</strong>{{ list.IsFsk || "it's unknown" }}</mat-list-item
+  >
+  <mat-list-item role="listitem">
+    <strong>IsOrdergruppeC:</strong
+    >{{ list.IsOrdergruppeC || "it's unknown" }}</mat-list-item
+  >
+</mat-list>
